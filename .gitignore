@@ -21,3 +21,12 @@ coverage/
 
 # 回收站
 .Trash-0
+
+# 本地部署数据（compose 把 ./data 挂载为容器内的数据库与日志目录）
+# 注意：原有的 server/data、server/logs 只覆盖 All-in-One 布局，
+# 前后端分离（docker-compose）用的是仓库根的 ./data
+/data/
+
+# 本地备份文件
+*.bak
+*.bak.*

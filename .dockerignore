@@ -35,3 +35,6 @@ docs
 .cnb
 
 magicpush
+
+# 本地运行时数据（compose 挂载的 ./data），不需要进构建上下文
+data
