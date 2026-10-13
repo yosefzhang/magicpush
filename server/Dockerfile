@@ -2,16 +2,16 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
 RUN corepack enable && corepack prepare pnpm@latest --activate
-COPY package.json pnpm-lock.yaml ./
+COPY server/package.json server/pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod
 
 # 阶段2: 运行镜像
 FROM node:20-alpine AS final
 WORKDIR /app/server
 COPY --from=deps /app/node_modules ./node_modules
-COPY package.json ./
-COPY src/ ./src/
-COPY ../version.json ../
+COPY server/package.json ./
+COPY server/src/ ./src/
+COPY version.json /app/version.json
 RUN mkdir -p data logs
 
 EXPOSE 3000
