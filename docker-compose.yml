@@ -30,3 +30,5 @@ services:
     depends_on:
       - server
     network_mode: bridge
+    links:
+      - server
