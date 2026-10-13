@@ -1,6 +1,6 @@
 {
   "name": "magicpush",
-  "version": "1.0.1",
+  "version": "1.14.0",
   "displayName": "MagicPush",
   "description": "支持多渠道消息推送的统一管理平台",
   "repository": {
